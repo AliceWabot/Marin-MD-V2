@@ -1,16 +1,16 @@
 let axios = require("axios");
 
-let handler = async(m, { conn, text }) => {
+let handler = async (m, { conn, text }) => {
 
-    if (!text) return conn.reply(m.chat, 'Masukan Teksnya', m)
+	if (!text) return conn.reply(m.chat, 'Enter the text!!', m)
 
-	axios.get(`https://some-random-api.ml/binary?text=${text}`).then ((res) => {
-	 	let hasil = `Teks : ${text}\nBinary : ${res.data.binary}`
+	axios.get(`https://some-random-api.ml/binary?text=${text}`).then((res) => {
+		let hasil = `Text : ${text}\nBinary : ${res.data.binary}`
 
-    conn.reply(m.chat, hasil, m)
+		conn.reply(m.chat, hasil, m)
 	})
 }
-handler.help = ['binary'].map(v => v + ' <teks>')
+handler.help = ['binary'].map(v => v + ' <text>')
 handler.tags = ['tools']
 handler.command = /^(binary)$/i
 handler.owner = false

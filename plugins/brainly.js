@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
 let handler = async (m, { text, command, usedPrefix }) => {
-    if (!text) throw `uhm.. teksnya mana?\n\ncontoh:\n${usedPrefix + command} membaca`
+    if (!text) throw `uhm.. where's the text?\n\ncontoh:\n${usedPrefix + command} read`
     let res = await fetch(`https://api.xteam.xyz/brainly?soal=${text}&APIKEY=cristian9407`)
     if (!res.ok) throw eror
     let json = await res.json()

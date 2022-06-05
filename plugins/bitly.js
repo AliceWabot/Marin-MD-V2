@@ -4,7 +4,7 @@ let handler = async (m, { text }) => {
   let res = await fetch(global.API('xteam', '/shorturl/bitly', { url: text }, 'APIKEY'))
   let json = await res.json()
   if (json.status) m.reply(json.result.link)
-  else throw 'Link Invalid!\nPeriksa url anda'
+  else throw 'Invalid Link!\nCheck your url'
 }
 handler.help = ['bitly'].map(v => v + ' <link>')
 handler.tags = ['shortlink']

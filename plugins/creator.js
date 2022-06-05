@@ -1,21 +1,7 @@
-function handler(m) {
-const q = {
-	"key": {
-    "participants":"0@s.whatsapp.net",
-		"remoteJid": "status@broadcast",
-		"fromMe": false,
-		"id": ""
-	},
-	"message": {
-		"contactMessage": {
-			"vcard": "BEGIN:VCARD\nVERSION:3.0\nN:;Papah-Chan;;;FN:Elyas Ganteng\nORG:Elyas Ganteng;\nTEL;type=CELL;type=VOICE;waid=17608914335:+1 760-891-4335\nEND:VCARD"
-		}
-	},
-	"participant": "0@s.whatsapp.net"
-}
-
-conn.sendContact(m.chat, '17608914335', 'Papah', m)
-m.reply(m.chat,'*Tuh nomor owner ku*\n*Chat jika PENTING*', q)
+const PhoneNumber = require('awesome-phonenumber')
+async function handler(m) {
+	let vcard = 'BEGIN:VCARD\nVERSION:3.0\nN::;Zero-XD;;;\nFN:Zero Two 🔮\nitem1.TEL;type=VOICE;waid=94711392491:+94 71 139 2491\nitem1.X-ABLabel:Even better\nitem2.EMAIL;type=INTERNET:arisuxdd@yahoo.com\nitem2.X-ABLabel:Email\nitem3.URL:https://instagram.com/shelby_cer\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Japan;;;;\nitem4.X-ABLabel:Region\nEND:VCARD'
+	conn.sendMessage(m.chat, { contacts: { displayName: 'Zero Two 🔮', contacts: [{ vcard }] } }, { quoted: m })
 }
 handler.help = ['owner', 'creator']
 handler.tags = ['info']

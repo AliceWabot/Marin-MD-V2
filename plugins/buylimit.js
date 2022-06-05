@@ -1,4 +1,4 @@
-const xpperlimit = 350 
+const xpperlimit = 350
 let handler = async (m, { conn, command, args }) => {
   let count = command.replace(/^buy/i, '')
   count = count ? /all/i.test(count) ? Math.floor(global.db.data.users[m.sender].exp / xpperlimit) : parseInt(count) : args[0] ? parseInt(args[0]) : 1
@@ -7,9 +7,9 @@ let handler = async (m, { conn, command, args }) => {
     global.db.data.users[m.sender].exp -= xpperlimit * count
     global.db.data.users[m.sender].limit += count
     conn.sendBut(m.chat, `-${xpperlimit * count} XP\n+ ${count} Limit`, wm, 'Buy All', '.buyall', m)
-  } else conn.sendBut(m.chat, `XP tidak mencukupi untuk membeli ${count} limit`, wm, 'Klaim Harian', '.daily', m)
+  } else conn.sendBut(m.chat, `Insufficient XP to buy ${count} limit`, wm, 'Daily Claims', '.daily', m)
 }
-handler.help = ['buy<jumlah limit>', 'buy <jumlah limit>', 'buyall']
+handler.help = ['buy<amount of limit>', 'buy <amount of limit>', 'buyall']
 handler.tags = ['xp']
 handler.command = /^buy([0-9]+)|buy|buyall$/i
 handler.owner = false
