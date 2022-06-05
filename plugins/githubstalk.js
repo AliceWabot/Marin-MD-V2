@@ -2,7 +2,7 @@ let fetch = require('node-fetch')
 
 let handler = async(m, { conn, text }) => {
 
-  if (!text) return conn.reply(m.chat, 'Harap Masukan Username', m)
+  if (!text) return conn.reply(m.chat, 'Please Enter Username', m)
 
   await m.reply('Searching...')
     let res = await fetch(`https://hadi-api.herokuapp.com/api/githubstalk?username=${text}`)

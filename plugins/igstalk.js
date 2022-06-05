@@ -2,7 +2,7 @@ const axios = require('axios')
 const cheerio = require('cheerio')
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args || !args[0]) throw `Gunakan format ${usedPrefix}${command} [username]
+  if (!args || !args[0]) throw `Use format ${usedPrefix}${command} [username]
 Contoh: ${usedPrefix}${command} jokowi
 `.trim()
   let res = await igstalk(args[0])

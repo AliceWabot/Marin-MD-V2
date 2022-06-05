@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 let util = require('util')
 let handler = async (m, { text }) => {
-  if (!/^https?:\/\//.test(text)) throw 'Awali *URL* dengan http:// atau https://'
+  if (!/^https?:\/\//.test(text)) throw 'Prefix *URL* with http:// or https://'
   let _url = new URL(text)
   let url = global.API(_url.origin, _url.pathname, Object.fromEntries(_url.searchParams.entries()), 'APIKEY')
   let res = await fetch(url)
@@ -12,7 +12,7 @@ let handler = async (m, { text }) => {
   if (!/text|json/.test(res.headers.get('content-type'))) return conn.sendFile(m.chat, url, 'file', text, m)
   let txt = await res.buffer()
   try {
-    txt = util.format(JSON.parse(txt+''))
+    txt = util.format(JSON.parse(txt + ''))
   } catch (e) {
     txt = txt + ''
   } finally {

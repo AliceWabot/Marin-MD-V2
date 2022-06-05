@@ -22,7 +22,7 @@ let stikerhuuu = [
  "https://telegra.ph/file/300610838ffa0e6576eb9.png",//patrick pembohong
  "https://telegra.ph/file/954afe562e58c144620ae.png",//spongebob FBI
  "https://telegra.ph/file/72026dcc46e4cb4b6f9ae.png",//mazowski monster inc
- "https://telegra.ph/file/aa9f1bea869e362e6f56e.png",//wkwk
+ "https://i.pinimg.com/originals/80/84/93/8084934873392b75aa595c60be7669eb.jpg",//wkwk
  "https://telegra.ph/file/09bbff0da316ba21b4f8e.png",//kucing2
  "https://telegra.ph/file/2e0637d57e3cc1abcb4a0.png",//patrick anak setan
  "https://telegra.ph/file/d771ae015b5486859d03f.png",//mazowski 2

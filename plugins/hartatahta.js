@@ -1,12 +1,12 @@
 let fs = require('fs')
 let handler = async (m, { conn, text }) => {
   conn.hartatahta = conn.hartatahta ? conn.hartatahta : {}
-  if (m.chat in conn.hartatahta) throw 'Masih ada yang sedang membuat\nTeks Harta Tahta\ndi chat ini... tunggu sampai selesai'
+  if (m.chat in conn.hartatahta) throw 'Someone is still making\nThe text of the Throne\n this chat...wait for it to finish'
   else conn.hartatahta[m.chat] = true
-  m.reply('_Sedang membuat..._\n*Mohon tunggu*')
+  m.reply('_Creating..._\n*Please wait*')
   try {
     let img = await ht(text ? text : ':v')
-    conn.sendFile(m.chat, img, 'Harta Tahta.png', '*Nih*', m)
+    conn.sendFile(m.chat, img, 'Harta Tahta.png', '*uhm..*', m)
     setTimeout(() => {
       fs.unlinkSync(img)
     }, 5000);

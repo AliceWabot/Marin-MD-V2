@@ -2,7 +2,7 @@ let fetch = require('node-fetch')
 
 let handler = async(m, { conn, text }) => {
 
-  if (!text) return conn.reply(m.chat, 'Harap Masukan nama hero', m)
+  if (!text) return conn.reply(m.chat, 'Please enter the name of the hero', m)
 
   await m.reply('Searching...')
     let res = await fetch(`https://x-restapi.herokuapp.com/api/heroml?q=${text}&apikey=BETA`)
@@ -54,7 +54,7 @@ ${json.background_story}
 
     conn.sendFile(m.chat, thumb, 'tiktokstalk.jpg', hasil, m)
 }
-handler.help = ['heroml'].map(v => v + ' <nama hero>')
+handler.help = ['heroml'].map(v => v + ' <hero name>')
 handler.tags = ['internet']
 handler.command = /^(heroml)$/i
 

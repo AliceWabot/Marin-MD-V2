@@ -16,9 +16,9 @@ let handler = async (m, {conn}) => {
     else who = m.sender
     let user = global.db.data.users[who]
 let anu = `${ucapan()}
-Halo👋
-Ada Yang Bisa Saya Bantu?
-Tekan *MENU*
+hey,
+how can i help u 🍑?
+press *MENU*
 
 Runtime: ${uptime}`
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -30,7 +30,7 @@ Runtime: ${uptime}`
            hydratedFooterText: `${date}`,
            hydratedButtons: [{
              urlButton: {
-               displayText: '📍instagram',
+               displayText: 'insta ',
                url: instagram
              }
 
@@ -44,7 +44,7 @@ Runtime: ${uptime}`
            },
                {
              quickReplyButton: {
-               displayText: 'Jangan Di Pencet',
+               displayText: 'Don\'t Press',
                id: 'huuu',
              }
 

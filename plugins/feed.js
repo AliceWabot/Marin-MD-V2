@@ -7,8 +7,8 @@ let handler = async (m, { conn, args, usedPrefix }) => {
     let rubah = global.db.data.users[m.sender].rubah
     switch (type) {
         case 'phonix':
-            if (phonix == 0) return m.reply('*Kamu belum memiliki Pet phonix*')
-            if (phonix == 5) return m.reply('*Pet kamu dah lvl max*')
+            if (phonix == 0) return m.reply('*You don\'t have a Pet phonix yet*')
+            if (phonix == 5) return m.reply('*Your pet is lvl max*')
             let __waktur = (new Date - global.db.data.users[m.sender].phonixlastclaim)
             let _waktur = (600000 - __waktur)
             let waktur = clockString(_waktur)
@@ -17,21 +17,21 @@ let handler = async (m, { conn, args, usedPrefix }) => {
                     global.db.data.users[m.sender].makananpet -= 1
                     global.db.data.users[m.sender].anakphonix += 20
                     global.db.data.users[m.sender].phonixlastclaim = new Date * 1
-                    conn.reply(m.chat, `Berhasil memberi makan pet ${type}`, m)
+                    conn.reply(m.chat, `Successfully feed the pet ${type}`, m)
                     if (phonix > 0) {
                         let naiklvl = ((phonix * 100) - 1)
                         if (global.db.data.users[m.sender].anakphonix > naiklvl) {
                             global.db.data.users[m.sender].phonix += 1
                             global.db.data.users[m.sender].anakphonix -= (phonix * 100)
-                            conn.reply(m.chat, `*Selamat Pet phonix kamu naik level*`, m)
+                            conn.reply(m.chat, `*Congratulations Pet phonix you leveled up*`, m)
                         }
                     }
-                } else m.reply(`Makanan pet kamu tidak cukup`)
-            } else m.reply(`Pet kamu sudah kenyang, coba kasih makan *${waktur}* lagi`)
+                } else m.reply(`Your pet food is not enough`)
+            } else m.reply(`Your pet is full, try feeding *${waktur}* again`)
             break
         case 'kuda':
-            if (kuda == 0) return m.reply('*Kamu belum memiliki Pet Kuda*')
-            if (kuda == 5) return m.reply('*Pet kamu dah lvl max*')
+            if (kuda == 0) return m.reply('*You don\'t have a Horse Pet yet*')
+            if (kuda == 5) return m.reply('*Your pet is lvl max*')
             let __waktuk = (new Date - global.db.data.users[m.sender].kudalastclaim)
             let _waktuk = (600000 - __waktuk)
             let waktuk = clockString(_waktuk)
@@ -40,21 +40,21 @@ let handler = async (m, { conn, args, usedPrefix }) => {
                     global.db.data.users[m.sender].makananpet -= 1
                     global.db.data.users[m.sender].anakkuda += 20
                     global.db.data.users[m.sender].kudalastclaim = new Date * 1
-                    conn.reply(m.chat, `Berhasil memberi makan pet ${type}`, m)
+                    conn.reply(m.chat, `Successfully feed the pet  ${type}`, m)
                     if (kuda > 0) {
                         let naiklvl = ((kuda * 100) - 1)
                         if (global.db.data.users[m.sender].anakkuda > naiklvl) {
                             global.db.data.users[m.sender].kuda += 1
                             global.db.data.users[m.sender].anakkuda -= (kuda * 100)
-                            conn.reply(m.chat, `*Selamat Pet Kuda kamu naik level*`, m)
+                            conn.reply(m.chat, `*Congratulations Pet Horse you leveled up*`, m)
                         }
                     }
-                } else m.reply(`Makanan pet kamu tidak cukup`)
-            } else m.reply(`Pet kamu sudah kenyang, coba kasih makan *${waktuk}* lagi`)
+                } else m.reply(`Your pet food is not enough`)
+            } else m.reply(`Your pet is full, try feeding *${time}* again`)
             break
         case 'naga':
-            if (naga == 0) return m.reply('*Kamu belum memiliki Pet Naga*')
-            if (naga == 5) return m.reply('*Pet kamu dah lvl max*')
+            if (naga == 0) return m.reply('*You don\'t have a Dragon Pet yet*')
+            if (naga == 5) return m.reply('*Your pet is lvl max*')
             let ___waktuuu = (new Date - global.db.data.users[m.sender].nagalastclaim)
             let ____waktuuu = (600000 - ___waktuuu)
             let waktuuu = clockString(____waktuuu)
@@ -63,21 +63,21 @@ let handler = async (m, { conn, args, usedPrefix }) => {
                     global.db.data.users[m.sender].makananpet -= 1
                     global.db.data.users[m.sender].anaknaga += 20
                     global.db.data.users[m.sender].kudalastclaim = new Date * 1
-                    conn.reply(m.chat, `Berhasil memberi makan pet ${type}`, m)
+                    conn.reply(m.chat, `Successfully feed the pet ${type}`, m)
                     if (naga > 0) {
                         let naiklvl = ((naga * 100) - 1)
                         if (global.db.data.users[m.sender].anaknaga > naiklvl) {
                             global.db.data.users[m.sender].naga += 1
                             global.db.data.users[m.sender].anaknaga -= (naga * 100)
-                            conn.reply(m.chat, `*Selamat Pet Naga kamu naik level*`, m)
+                            conn.reply(m.chat, `*Congratulations your Dragon Pet leveled up*`, m)
                         }
                     }
-                } else m.reply(`Makanan pet kamu tidak cukup`)
-            } else m.reply(`Pet kamu sudah kenyang, coba kasih makan *${waktuk}* lagi`)
+                } else m.reply(`Your pet food is not enough`)
+            } else m.reply(`Your pet is full, try feeding *${time}* again`)
             break
-            case 'rubah':
-            if (rubah == 0) return m.reply('*Kamu belum memiliki Pet rubah*')
-            if (rubah == 5) return m.reply('*Pet kamu dah lvl max*')
+        case 'rubah':
+            if (rubah == 0) return m.reply('*You don\'t have a pet fox yet*')
+            if (rubah == 5) return m.reply('*Your pet is lvl max*')
             let __waktuu = (new Date - global.db.data.users[m.sender].rubahlastclaim)
             let _waktuu = (600000 - __waktuu)
             let waktuu = clockString(_waktuu)
@@ -86,21 +86,21 @@ let handler = async (m, { conn, args, usedPrefix }) => {
                     global.db.data.users[m.sender].makananpet -= 1
                     global.db.data.users[m.sender].anakrubah += 20
                     global.db.data.users[m.sender].rubahlastclaim = new Date * 1
-                    conn.reply(m.chat, `Berhasil memberi makan pet ${type}`, m)
+                    conn.reply(m.chat, `Successfully feeding the pet ${type}`, m)
                     if (naga > 0) {
                         let naiklvl = ((rubah * 100) - 1)
                         if (global.db.data.users[m.sender].anakrubah > naiklvl) {
                             global.db.data.users[m.sender].rubah += 1
                             global.db.data.users[m.sender].anakrubah -= (rubah * 100)
-                            conn.reply(m.chat, `*Selamat Pet rubah kamu naik level*`, m)
+                            conn.reply(m.chat, `*Congratulations Pet fox you leveled up*`, m)
                         }
                     }
-                } else m.reply(`Makanan pet kamu tidak cukup`)
-            } else m.reply(`Pet kamu sudah kenyang, coba kasih makan *${waktuk}* lagi`)
+                } else m.reply(`Your pet food is not enough`)
+            } else m.reply(`Your pet is full, try feeding *${time}* again`)
             break
         case 'kucing':
-            if (kucing == 0) return m.reply('*Kamu belum memiliki Pet Kucing*')
-            if (kucing == 5) return m.reply('*Pet kamu dah lvl max*')
+            if (kucing == 0) return m.reply('*You don\'t have a Pet Cat yet*')
+            if (kucing == 5) return m.reply('*Pet lvl is max*')
             let __waktu = (new Date - global.db.data.users[m.sender].kucinglastclaim)
             let _waktu = (600000 - __waktu)
             let waktu = clockString(_waktu)
@@ -109,20 +109,20 @@ let handler = async (m, { conn, args, usedPrefix }) => {
                     global.db.data.users[m.sender].makananpet -= 1
                     global.db.data.users[m.sender].anakkucing += 20
                     global.db.data.users[m.sender].kucinglastclaim = new Date * 1
-                    conn.reply(m.chat, `Berhasil memberi makan pet ${type}`, m)
-                    if (kucing > 0) { 
+                    conn.reply(m.chat, `Successfully feed the pet ${type}`, m)
+                    if (kucing > 0) {
                         let naiklvl = ((kucing * 100) - 1)
                         if (global.db.data.users[m.sender].anakkucing > naiklvl) {
                             global.db.data.users[m.sender].kucing += 1
                             global.db.data.users[m.sender].anakkucing -= (kucing * 100)
-                            conn.reply(m.chat, `*Selamat Pet Kucing kamu naik level*`, m)
+                            conn.reply(m.chat, `*Congratulations Pet Cat you leveled up*`, m)
                         }
                     }
-                } else m.reply(`Makanan pet kamu tidak cukup`)
-            } else m.reply(`Pet kamu sudah kenyang, coba kasih makan *${waktu}* lagi`)
+                } else m.reply(`Your pet food is not enough`)
+            } else m.reply(`Your pet is full, try feeding *${time}* again`)
             break
         default:
-            return conn.reply(m.chat, `${usedPrefix}feed [kucing | phonix | kuda | naga]\nContoh penggunaan: *${usedPrefix}feed kucing*`, m)
+            return conn.reply(m.chat, `${usedPrefix}feed [kucing | phonix | kuda | dragon]\nUsage examples: *${usedPrefix}feed kucing*`, m)
     }
 }
 handler.help = ['feed [pet type]']
@@ -132,9 +132,9 @@ handler.command = /^(feed(ing)?)$/i
 module.exports = handler
 
 function clockString(ms) {
-  let h = Math.floor(ms / 3600000)
-  let m = Math.floor(ms / 60000) % 60
-  let s = Math.floor(ms / 1000) % 60
-  console.log({ms,h,m,s})
-  return [h, m, s].map(v => v.toString().padStart(2, 0) ).join(':')
+    let h = Math.floor(ms / 3600000)
+    let m = Math.floor(ms / 60000) % 60
+    let s = Math.floor(ms / 1000) % 60
+    console.log({ ms, h, m, s })
+    return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }

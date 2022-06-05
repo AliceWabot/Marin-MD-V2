@@ -16,7 +16,7 @@ let handler = async (m, { conn }) => {
         user.string += 3
         user.lasthourly= new Date * 1
     } else {
-        conn.sendBut(m.chat, `silahkan tunggu *🕒${timers}* lagi untuk bisa mengclaim lagi`, wm, 'Inventory', '.inv',m )
+        conn.sendBut(m.chat, `please wait *🕒${timers}* again to be able to claim again`, wm, 'Inventory', '.inv',m )
     }
 }
 handler.help = ['hourly']
