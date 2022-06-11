@@ -8,12 +8,12 @@ let handler = async (m, { conn, command, args }) => {
   if (global.db.data.users[m.sender].atm >= xpperatm * count) {
     global.db.data.users[m.sender].atm -= xpperatm * count
     global.db.data.users[m.sender].money += count
-    conn.sendButtonLoc(m.chat, thumb, `-Rp.${xpperatm * count} 💹\n+ ${count} 💳\n\n[ ! ] Succes menarik !`, wm, 'MY', '#my', m)
-  } else conn.reply(m.chat, `[❗] Uang anda tidak mencukupi untuk menarik ${count} !`, m)
+    conn.sendButtonLoc(m.chat, thumb, `-Rp.${xpperatm * count} 💹\n+ ${count} 💳\n\nInteresting success!`, wm, 'MY', '#my', m)
+  } else conn.reply(m.chat, `Your money is not enough to withdraw${count} !`, m)
 }
-handler.help = ['narik <jumlah>']
+handler.help = ['pull <amount>']
 handler.tags = ['xp']
-handler.command = /^narik ([0-9]+)|narik|tarik$/i
+handler.command = /^pull ([0-9]+)|pull|tarik$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

@@ -8,12 +8,12 @@ let handler = async (m, { conn, command, args }) => {
   if (global.db.data.users[m.sender].money >= xppermoney * count) {
     global.db.data.users[m.sender].money -= xppermoney * count
     global.db.data.users[m.sender].atm += count
-    conn.sendButtonLoc(m.chat, thumb, `-Rp.${xppermoney * count} 💹\n+ ${count} 💳\n\n[ ! ] Succes menabung !`, wm, 'MY', '#my', m)
-  } else conn.reply(m.chat, `[❗] Uang anda tidak mencukupi untuk menabung ${count} !`, m)
+    conn.sendButtonLoc(m.chat, thumb, `-Rp.${xppermoney * count} 💹\n+ ${count} 💳\n\nSaving success!`, wm, 'MY', '#my', m)
+  } else conn.reply(m.chat, `[❗] You don't have enough money to save ${count} !`, m)
 }
-handler.help = ['nahung <jumlah>']
+handler.help = ['saving <amount>']
 handler.tags = ['xp']
-handler.command = /^nabung ([0-9]+)|nabung$/i
+handler.command = /^saving ([0-9]+)|saving$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

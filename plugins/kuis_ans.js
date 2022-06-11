@@ -4,7 +4,7 @@ global.kuis = global.kuis ? global.kuis : {}
 
 handler.before = async function (m, { text }) {
   let id = m.chat
-  if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/「 KUIS 」/i.test(m.quoted.text)) return
+  if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/「 QUIZ 」/i.test(m.quoted.text)) return
   if (!(id in global.kuis)) return m.reply('Soal itu telah berakhir')
   if (m.quoted.id == global.kuis[id][0].id) {
   let kuis = global.kuis[id][1]

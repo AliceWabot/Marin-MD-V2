@@ -1,9 +1,9 @@
 let handler = async (m, {text}) => {
-  if (!text) throw `Masukkan nama
+  if (!text) throw `Enter name
   
- *Contoh:*
- .namaninja marin`
- if (text.length > 50) throw 'Nama Terlalu Panjang!\nMAX 50 HURUF!'
+ *example:*
+ .mynameis marin`
+ if (text.length > 50) throw 'Name Too Long!\nMAX 50 LETTERS! 🌚'
     let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
     m.reply(teks.replace(/[a-z]/gi, v => {
         return {
@@ -36,8 +36,8 @@ let handler = async (m, {text}) => {
         }[v.toLowerCase()] || v
     }))
 }
-handler.help = ['namaninja <teks>']
+handler.help = ['mynameis <text>']
 handler.tags = ['fun']
-handler.command =  /^(namaninja|namae)$/i
+handler.command =  /^(mynameis|namae)$/i
 
 module.exports = handler

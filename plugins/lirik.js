@@ -2,7 +2,7 @@ let { MessageType } = require('@adiwajshing/baileys-md')
 let fetch = require('node-fetch')
 let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
     try {
-        if (!args || !args[0] || args.length < 1) return m.reply(`[❗] Format salah\nContoh : ${usedPrefix}lirik sad!`)
+        if (!args || !args[0] || args.length < 1) return m.reply(`[❗] Incorrect format\nExample: ${usedPrefix}lyrics sad!`)
         let res = await fetch(global.API('bg', '/lirik', { 
             title: args[0],
             artist: args[1] || '' 
@@ -10,7 +10,7 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
         let json = await res.json()
         if (json.status !== true) throw json
         m.reply(`
-〘 *Lirik/Lyrics* 〙
+〘 *Lyrics* 〙
 _Song Name_ : *${args[0]}*
 Requested by : *${conn.getName(m.sender)}*
 \`\`\`${json.result}\`\`\`

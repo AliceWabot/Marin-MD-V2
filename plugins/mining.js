@@ -19,9 +19,9 @@ let handler = async (m, { conn }) => {
       user.mythic += minbm * 1
       user.lastmining = new Date * 1
             
-    m.reply(`Kamu Menambang Di ${pickRandom(['⛰️Lembah', '⛰️Goa mletre', '🏞️Sungai Selandia', '⛰️Goa texas', '...'])}\n*⚒️Hasil Tambang*\n💎Diamond: *${minsm}*\n🪙Emas: *${minim}*\n⛓️Besi: *${minam}*\n🕸️String: *${minkm}*\nDan Juga Kamu Mendapatkan Hadiah Rare Tambahan\n🗳️Mythic Crate:*${minbm}*`)
-      } else conn.reply( m.chat, `Tunggu 🕓${timers} lagi, untuk menambang`, m)
-    } else conn.reply( m.chat, `Kamu Tidak Mempunyai *⛏️Pickaxe* untuk menambang\nBuat Lah Pickaxe menggunakan string kayu dan batu!`,m )
+    m.reply(`Kamu Menambang Di ${pickRandom(['⛰️ ️Valley', '⛰️ Mletre Cave', '🏞️ zealand river', '⛰️ texas cave', '...'])}\n*⚒️ Mining Products*\n💎Diamond: *${minsm}*\n🪙 Gold: *${minim}*\n⛓️ Iron: *${minam}*\n🕸️String: *${minkm}*\nAnd Also You Get Extra Rare Rewards\n🗳️Mythic Crate:*${minbm}*`)
+      } else conn.reply( m.chat, `Tunggu 🕓${timers} again, to mine`, m)
+    } else conn.reply( m.chat, `Kamu Tidak Mempunyai *⛏️ Pickaxe* to mine\nMake a Pickaxe using wood and stone strings!`,m )
   }
 
 handler.help = ['mining']

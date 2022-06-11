@@ -166,7 +166,7 @@ let date = global.botdate
     let str = `╭──────━• *STATUS* •━──────┐
 │📡 *Status:* ${premium ? "Premium": "Free"} User
 │📇 *Name:* ${usrname} 
-│💌 *Pasangan:* ${ pasangan ? namapsng : '❌'}
+│💌 *Couple:* ${ pasangan ? namapsng : '❌'}
 │❗ *Warn:* ${warn}
 │⛔ *Banned:* No
 │
@@ -192,22 +192,22 @@ ${readMore}
 │🏹 *Bow:* Cooming Soon!
 ╰──────────━⃝┅⃝━────────┘
 
-╭──────━• *KANDANG* •━──────┐
-│🐔 *Ayam:* ${ayam}    
-│🐐 *Kambing:* ${kambing}
-│🐄 *Sapi:* ${sapi} 
-│🐃 *Kerbau:* ${kerbau}
-│🐖 *Babi:* ${babi}    
-│🐅 *Harimau:* ${harimau}
-│🐂 *Banteng:* ${banteng} 
-│🐒 *Monyet:* ${monyet}
-│🐗 *Babi Hutan:* ${babihutan}
+╭──────━• *CAGE* •━──────┐
+│🐔 *Chicken:* ${ayam}    
+│🐐 *Goat:* ${kambing}
+│🐄 *Cow:* ${sapi} 
+│🐃 *Buffalo:* ${kerbau}
+│🐖 *Pig:* ${babi}    
+│🐅 *Tiger:* ${harimau}
+│🐂 *Bull:* ${banteng} 
+│🐒 *Monkey:* ${monyet}
+│🐗 *Wild boar:* ${babihutan}
 │🐼 *Panda:* ${panda}
-│🐘 *Gajah:* ${gajah}
-│🐊 *Buaya:* ${buaya}
+│🐘 *Elephant:* ${gajah}
+│🐊 *Crocodile:* ${buaya}
 │
-│🥢 Bisa kamu masak */masak ayamb*
-│💬 *Total Hewan:* ${ buaya + gajah + panda + babihutan + monyet + harimau + kerbau + kambing + ayam + sapi + babi + banteng } tangkapan
+│🥢 Can you cook */cook chicken*
+│💬 *Total Animals:* ${ buaya + gajah + panda + babihutan + monyet + harimau + kerbau + kambing + ayam + sapi + babi + banteng } tangkapan
 ╰──────────━⃝┅⃝━────────┘
 
 ╭──────━• *KOLAM* •━──────┐

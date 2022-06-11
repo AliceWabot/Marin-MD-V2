@@ -28,13 +28,13 @@ let handler = async (m, { conn, usedPrefix, owner }) => {
         let mcng = `
 *Your 🎣Fishing Results!*
         
-🐟Ikan nila : ${nila}
-🐡Bawal : ${bawal}
-🐟lele : ${lele}
-🐟 ikan : ${ikan}
-🦐 udang : ${udang}
-🐋 Paus: ${paus}
-🦀 Kepiting: ${kepiting}
+🐟 Parrot fish : ${nila}
+🐡 Bawal : ${bawal}
+🐟 catfish : ${lele}
+🐟 fish : ${ikan}
+🦐 shrimp : ${udang}
+🐋 Pope: ${paus}
+🦀 Crab: ${kepiting}
 
 _total pancingan↓_
 ${nila + bawal + ikan + lele}
@@ -77,7 +77,7 @@ ${ usedPrefix }Cook catfish `
          user.kepiting += kepiting * 1
 
         	  } else m.reply(`You're already fishing, wait until ${timers}`)
-           } else conn.sendBut(m.chat, `*[❗] kamu tidak punya kail pancingan 🎣*`, wm, `Craft Fishingrod`, '.craft pancing', m)
+           } else conn.sendBut(m.chat, `*[❗] you don't have a fishing hook *`, wm, `Craft Fishingrod`, '.craft fishingrod', m)
            } catch (e) {
         console.log(e)
         conn.reply(m.chat, 'Error', m)

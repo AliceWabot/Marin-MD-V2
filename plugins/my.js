@@ -26,7 +26,7 @@ let anu =`╭───❑ 「 BALANCE 」 ❑────
            hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
-               displayText: '📍instagram',
+               displayText: 'Website',
                url: instagram
              }
 

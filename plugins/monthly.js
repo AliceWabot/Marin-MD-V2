@@ -6,7 +6,7 @@ let handler = async (m, { conn }) => {
     let _timers = (2592000000 - (new Date - user.lastmonthly))
     let timers = clockString(_timers) 
     if (new Date - user.lastmonthly > 2592000000) {
-    let str = `+150000 money 💹\n+10 Legendary crate 🧰\n+5 Pet crate 📫\n+13 Iron ⛓\n+5 gold 🪙\n+15 string 🕸\n+20 kayu 🪵`
+    let str = `+150000 money 💹\n+10 Legendary crate 🧰\n+5 Pet crate 📫\n+13 Iron ⛓\n+5 gold 🪙\n+15 string 🕸\n+20 wood 🪵`
         conn.send2But(m.chat, str, wm, 'Claim', '.claim', 'Weekly', '.weekly',m)
         conn.reply(str)
         user.money += 150000
@@ -18,7 +18,7 @@ let handler = async (m, { conn }) => {
         user.pet += 5
         user.lastmonthly = new Date * 1
     } else {
-        conn.sendBut(m.chat, `silahkan tunggu *🕒${timers}* lagi untuk bisa mengclaim lagi`, wm, 'Inventory', '.inv',m )
+        conn.sendBut(m.chat, `Please wait *🕒${timers}* again to be able to claim again`, wm, 'Inventory', '.inv',m )
     }
 }
 handler.help = ['monthly']

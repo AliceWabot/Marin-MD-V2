@@ -26,11 +26,11 @@ let handler = async (m, { conn, text }) => {
     if (!result) throw result
     m.reply(`*${format}* = _${result}_`)
   } catch (e) {
-    if (e == undefined) throw 'Isinya?'
-    throw 'Format salah, hanya 0-9 dan Simbol -, +, *, /, ×, ÷, π, e, (, ) yang disupport'
+    if (e == undefined) throw 'Contents?'
+    throw 'Incorrect format, only 0-9 and Symbols -, +, *, /, ×, , , e, (, ) are supported'
   }
 }
-handler.help = ['kalkulator <soal>']
+handler.help = ['calculator <question>']
 handler.tags = ['tools']
 handler.command = /^(calc(ulat(e|or))?|kalk(ulator)?)$/i
 handler.exp = 5

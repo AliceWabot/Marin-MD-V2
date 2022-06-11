@@ -7,23 +7,23 @@ let handler = async (m, { conn, command }) => {
 m.reply(` *JADWAL BOLA*
 
 _*${json.data[0].kickoff}*_
-Waktu: _${json.data[0].waktu}_
+Time: _${json.data[0].waktu}_
 Channel tv: ${json.data[0].channel}
 
 _*${json.data[1].kickoff}*_
-Waktu: _${json.data[1].waktu}_
+Time: _${json.data[1].waktu}_
 Channel tv: ${json.data[1].channel}
 
 _*${json.data[2].kickoff}*_
-Waktu: _${json.data[2].waktu}_
+Time: _${json.data[2].waktu}_
 Channel tv: ${json.data[2].channel}
 
 _*${json.data[3].kickoff}*_
-Waktu: _${json.data[3].waktu}_
+Time: _${json.data[3].waktu}_
 Channel tv: ${json.data[3].channel}
 
 _*${json.data[4].kickoff}*_
-Waktu: _${json.data[4].waktu}_
+Time: _${json.data[4].waktu}_
 Channel tv: ${json.data[4].channel}
 `)
 

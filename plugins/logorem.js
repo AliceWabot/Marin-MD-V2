@@ -1,12 +1,12 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, args }) => {
    response = args.join(' ')
-  if (!args[0]) throw 'Masukkan Text'
-  m.reply('*Wait ngab*\nProses...')
+  if (!args[0]) throw 'Enter Text!!!'
+  m.reply('*Wait...🎃')
   let res = `https://caliphapi.com/api/rem?text=${response}&text2=Elyas&apikey=ELYASXD`
-  conn.sendFile(m.chat, res, 'kaneki.jpg', `Sudah jadi`, m, false)
+  conn.sendFile(m.chat, res, 'kaneki.jpg', `he he`, m, false)
 }
-handler.help = ['logorem'].map(v => v + ' <teks>')
+handler.help = ['logorem'].map(v => v + ' <text>')
 handler.tags = ['maker']
 handler.command = /^(logorem)$/i
 handler.limit = true

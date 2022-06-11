@@ -16,24 +16,24 @@ let sapi = global.db.data.users[m.sender].sapi
 let zer = `
 *—「 KANDANG 🐾 」—*
     
- *◩   ️ 🐂 = [ ${banteng} ] Ekor Banteng*
- *◩   ️ 🐅 = [ ${harimau} ] Ekor Harimau*
- *◩   ️ 🐘 = [ ${gajah} ] Ekor Gajah*
- *◩   ️ 🐐 = [ ${kambing} ] Ekor Kambing*
- *◩   ️ 🐼 = [ ${panda} ] Ekor Panda*
- *◩   ️ 🐊 = [ ${buaya} ] Ekor Buaya*
- *◩   ️ 🐃 = [ ${kerbau} ] Ekor Kerbau*
- *◩   ️ 🐮 = [ ${sapi} ] Ekor Sapi*
- *◩   ️ 🐒 = [ ${monyet} ] Ekor Monyet*
- *◩   ️ 🐗 = [ ${babihutan} ] Ekor Babi Hutan*
- *◩   ️ 🐖 = [ ${babi} ] Ekor Babi*
- *◩   ️ 🐓 = [ ${ayam} ] Ekor Ayam*
+ *◩   ️ 🐂 = [ ${banteng} ] Bull Tail*
+ *◩   ️ 🐅 = [ ${harimau} ] Tiger Tail*
+ *◩   ️ 🐘 = [ ${gajah} ] Elephant Tail*
+ *◩   ️ 🐐 = [ ${kambing} ] Goat Tail*
+ *◩   ️ 🐼 = [ ${panda} ] Panda Tail*
+ *◩   ️ 🐊 = [ ${buaya} ] Crocodile Tail*
+ *◩   ️ 🐃 = [ ${kerbau} ] Buffalo Tail*
+ *◩   ️ 🐮 = [ ${sapi} ] Cow Tail*
+ *◩   ️ 🐒 = [ ${monyet} ] Monkey Tail*
+ *◩   ️ 🐗 = [ ${babihutan} ] Boar Tail*
+ *◩   ️ 🐖 = [ ${babi} ] Pig Tail*
+ *◩   ️ 🐓 = [ ${ayam} ] Chicken Tail*
  `.trim()
- conn.sendBut(m.chat, zer,wm, 'Toko', '.pasar', m)
+ conn.sendBut(m.chat, zer,wm, 'Shop', '.pasar', m)
 } 
-handler.help = ['kandang']
+handler.help = ['cage']
 handler.tags = ['rpg']
-handler.command= /^(kandang)$/i
+handler.command= /^(cage)$/i
 handler.register = true
 let wm = global.wm
 
