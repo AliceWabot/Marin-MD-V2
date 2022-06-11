@@ -42,10 +42,10 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
 `.trim())
                 break
             default:
-            return m.reply(`Gunakan format ${usedPrefix}server <bedrock | java> <ip> <port>\ncontoh penggunaan: *${usedPrefix}server bedrock play.nethergames.org 19132*`.trim())
+            return m.reply(`Use format ${usedPrefix}server <bedrock | java> <ip> <port>\nusage example: *${usedPrefix}server bedrock play.nethergames.org 19132*`.trim())
         }
     } catch (e) {
-        conn.reply(m.chat, `Gunakan format ${usedPrefix}server <bedrock | java> <ip> <port>\ncontoh penggunaan: *${usedPrefix}server bedrock play.nethergames.org 19132*`.trim(), m)
+        conn.reply(m.chat, `Use format ${usedPrefix}server <bedrock | java> <ip> <port>\nusage example: *${usedPrefix}server bedrock play.nethergames.org 19132*`.trim(), m)
         console.log(e)
         if (DevMode) {
             let file = require.resolve(__filename)

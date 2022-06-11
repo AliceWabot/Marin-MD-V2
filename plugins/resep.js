@@ -3,7 +3,7 @@ let axios = require("axios");
 
 let handler = async(m, { conn, text }) => {
 
-  if (!text) return conn.reply(m.chat, 'Harap Masukan Query', m)
+  if (!text) return conn.reply(m.chat, 'Please Enter Query', m)
 
   await m.reply('Searching...')
    axios.get(`https://api.zeks.xyz/api/resep-masak?apikey=MIMINGANZ&q=${text}`)
@@ -12,15 +12,15 @@ let handler = async(m, { conn, text }) => {
         .then(
           (ress) => {
             let buf = Buffer.from(ress, 'base64')
-            let hasil = `*${res.data.title}*\n\nTingkat : ${res.data.tingkat}\nWaktu : ${res.data.duration}\nBahan2 :${res.data.bahan}\nPorsi : ${res.data.banyak}\nLangkah2 :\n${res.data.cara}\n\nSumber :\n${res.data.url}\n*Selamat Mencoba!`
+            let hasil = `*${res.data.title}*\n\nLevel : ${res.data.tingkat}\nTime : ${res.data.duration}\nIngredients :${res.data.bahan}\nPortion : ${res.data.banyak}\nStep2 :\n${res.data.cara}\n\nSumber :\n${res.data.url}\n*Good luck! 😊`
 
      conn.sendFile(m.chat, buf, 'resep.jpg', hasil, m)
         })
     })
 }
-handler.help = ['resep'].map(v => v + ' <masakan>')
+handler.help = ['recipe'].map(v => v + ' <Cook>')
 handler.tags = ['internet']
-handler.command = /^(resep)$/i
+handler.command = /^(recipe)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

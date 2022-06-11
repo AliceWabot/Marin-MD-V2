@@ -80,16 +80,16 @@ let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
     const Kchat = `
 *🎒 SHOP*
 
-*🧪 Penggunaan :*
-_${usedPrefix}shop <Buy|sell> <item> <jumlah>_
-Contoh penggunaan: _*${usedPrefix}shop buy potion 1*_
+*🧪 use :*
+_${usedPrefix}shop <Buy|sell> <item> <quantity>_
+Usage examples: _*${usedPrefix}shop buy potion 1*_
 
 *📮 Note :* 
-bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
+if there is no price, it means you can't buy it / it's max level
 
-🛍️ List Barang:
+🛍️ List Goods:
 ━━━━━━━━━━━━━━━━━━━
-*♻ Barang   | 💲 Harga beli*
+*♻ Item    | 💲 Purchase price*
 ━━━━━━━━━━━━━━━━━━━
 *🥤 Potion:* ${potion}
 *🍶 Aqua:* ${Baqua}

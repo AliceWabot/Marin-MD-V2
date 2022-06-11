@@ -7,7 +7,7 @@ const effects = ['greyscale', 'invert', 'brightness', 'threshold', 'sepia', 'red
 let handler = async (m, { conn, usedPrefix, text, command }) => {
   let effect = text.trim().toLowerCase()
   if (!effects.includes(effect)) throw `
-┌─「 *Daftar Efek* 」
+┌─「 *Securities List* 」
 ${effects.map(effect => `├ ${effect}`).join('\n')}
 └────
 Penggunaan:
@@ -17,8 +17,8 @@ ${usedPrefix + command} greyscale
 `.trim()
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
-  if (!mime) throw `Balas gambar dengan perintah *${usedPrefix + command}*`
-  if (!/image\/(jpe?g|png)/.test(mime)) throw `Media tidak didukung!`
+  if (!mime) throw `Reply image with command *${usedPrefix + command}*`
+  if (!/image\/(jpe?g|png)/.test(mime)) throw `Media not supported!`
   let img = await q.download()
   let url = await uploadImage(img)
   let apiUrl = API('https://some-random-api.ml/canvas/', encodeURIComponent(effect), {

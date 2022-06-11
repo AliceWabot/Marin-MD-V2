@@ -12,15 +12,15 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 	}[(args[0] || '')]
 	if (isClose === undefined) {
 		await conn.send2But(m.chat, `
-contoh penggunaan:
-*${usedPrefix + command} tutup*
-*${usedPrefix + command} buka*
-	`.trim(), 'setting grup', 'Buka', '.grup 1', 'Tutup', '.grup 0')
+usage example:
+*${usedPrefix + command} closed*
+*${usedPrefix + command} Open*
+	`.trim(), 'Group Setting', 'Open', '.grup 1', 'Close', '.grup 0')
 		throw false
 	}
 	await conn.groupSettingUpdate(m.chat, isClose)
 }
-handler.help = ['grup <buka/tutup>']
+handler.help = ['grup <open/close>']
 handler.tags = ['group']
 handler.command = /^(gro?up)$/i
 handler.owner = false

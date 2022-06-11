@@ -6,7 +6,7 @@ let handler = async(m, { conn, command }) => {
 
   global.opts["self"] = !isPublic
 
-  m.reply(`Berhasil ${!isPublic ? "Self" : "Public"} bot!`)
+  m.reply(`Succeed ${!isPublic ? "Self" : "Public"} bot!`)
 }
 
 handler.help = ["self", "public"]
