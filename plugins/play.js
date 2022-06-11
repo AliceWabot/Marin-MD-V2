@@ -7,20 +7,18 @@ const { youtubeSearch } = require('@bochilteam/scraper')
 let fs = require('fs')
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `Use example ${usedPrefix}${command} Minecraft`
+  if (!text) throw `Use example ${usedPrefix}${command} One piece`
   let vid = (await youtubeSearch(text)).video[0]
-  if (!vid) throw 'Video/Audio Tidak ditemukan'
+  if (!vid) throw 'Video/Audio Not found'
   let { title, description, thumbnail, videoId, durationH, viewH, publishedTime } = vid
   const url = 'https://www.youtube.com/watch?v=' + videoId
   let anu = `
 [ YOUTUBE PLAY ]
 
-📌 *Title:* ${title}
-🔗 *Url:* ${url}
-📩 *Description:* ${description}
-⏲️ *Published:* ${publishedTime}
-⌚ *Duration:* ${durationH}
-👁️ *Views:* ${viewH}
+*🔮 Title:* ${title}
+*🔻 Audio File Size:* ${filesizeF}
+*🔻 Video File Size:* ${yt2.filesizeF}
+*🍃 Server:* ${usedServer}
 `
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
@@ -28,12 +26,10 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
            hydratedContentText: anu,
            locationMessage: { 
            jpegThumbnail: await (await fetch(thumbnail)).buffer() }, 
-           hydratedFooterText: `jika video tidak sesuai
-silahkan ketik .yta link YouTube untuk mengunduh audio
-dan ketik .ytv link YouTube Untuk Mengunduh Video`,
+           hydratedFooterText: `© Alice 🤍🥀`,
            hydratedButtons: [{
              urlButton: {
-               displayText: '📍instagram',
+               displayText: 'Website',
                url: instagram
              }
 
@@ -69,7 +65,7 @@ dan ketik .ytv link YouTube Untuk Mengunduh Video`,
          { messageId: template.key.id }
      )
 }
-handler.help = ['play'].map(v => v + ' <pencarian>')
+handler.help = ['play'].map(v => v + ' <name>')
 handler.tags = ['downloader']
 handler.command = /^(p|play)$/i
 

@@ -1,5 +1,5 @@
 let handler = async (m, { conn }) => {
-    conn.sendButtonImg(m.chat, global.API('lolhuman', '/api/random/nsfw/ahegao', {}, 'apikey'), 'Nih', wm, 'NEXT', '.ahegao', m)
+    conn.sendButtonImg(m.chat, global.API('lolhuman', '/api/random/nsfw/ahegao', {}, 'apikey'), 'he he', wm, 'NEXT', '.ahegao', m)
 }
 handler.help = ['ahegao']
 handler.tags = ['nsfw']

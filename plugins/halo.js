@@ -30,7 +30,7 @@ Runtime: ${uptime}`
            hydratedFooterText: `${date}`,
            hydratedButtons: [{
              urlButton: {
-               displayText: 'insta ',
+               displayText: 'Website',
                url: instagram
              }
 

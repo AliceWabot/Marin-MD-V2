@@ -306,15 +306,15 @@ function gotPet(pet) {
 }
 
 function havePetandGotPet(pet, makananpet_count, potion_count) {
-    return `${gotPet(pet)}, Anda sudah memiliki pet *${emot(pet)}${pet}*, Hadiahmu diganti dengan *${potion_count}* 🥤potion${makananpet_count > 0 ? ` Dan *${makananpet_count}* Makanan Pet 🥩` : ''}`
+    return `${gotPet(pet)}, You already have a pet *${emot(pet)}${pet}*, Your reward is replaced with *${potion_count}* 🥤potion${makananpet_count > 0 ? ` and *${makananpet_count}* Pet Food 🥩` : ''}`
 }
 
 function gotPetandNotHavethatPet(pet, makananpet_count) {
-    return `${gotPet(pet)} ${makananpet_count > 0 ? `Dan *${makananpet_count}* Makanan Pet 🥩` : ''}`
+    return `${gotPet(pet)} ${makananpet_count > 0 ? `and *${makananpet_count}* Pet Food 🥩` : ''}`
 }
 
 function gakDapetApa(makananpet_count) {
-    return `${pickRandom(['Anda kurang beruntung', 'Coba buka lagi lain kali, karena gk dapet pet', 'kasian gk dapet pet', 'Mungkin lagi gk hoki dan gk dapet pet', 'wkwkkwkwke'])} Anda hanya mendapatkan *${makananpet_count}* 🥩Makanan pet'`
+    return `${pickRandom(['You\'re out of luck', 'Try to open again next time, because you didn\'t get a pet', 'poor you didn\'t get a pet', 'Maybe you don\'t have hockey and you don\'t get a pet', 'lamo'])} You only get *${foodpet_count} * Pet food'`
 }
 
 function isNumber(x) {  
