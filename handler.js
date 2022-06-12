@@ -581,14 +581,14 @@ module.exports = {
                     }
                     m.isCommand = true
                     let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17 // XP Earning per command
-                    if (xp > 200) m.reply('Ngecit -_-') // Hehehe
+                    if (xp > 200) m.reply('Ngecit -_') // Hehehe
                     else m.exp += xp
                     if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-                        this.reply(m.chat, `Limit anda habis, silahkan beli melalui *${usedPrefix}buy*`, m)
+                        this.reply(m.chat, `📛 your imit is out, please buy through *${usedPrefix}buy 📛*`, m)
                         continue // Limit habis
                     }
                     if (plugin.level > _user.level) {
-                        this.reply(m.chat, `diperlukan level ${plugin.level} untuk menggunakan perintah ini. Level kamu ${_user.level}`, m)
+                        this.reply(m.chat, `${plugin.level} level is required to use this command. Your level ${_user.level}`, m)
                         continue // If the level has not been reached
                     }
                     let extra = {
@@ -633,7 +633,7 @@ module.exports = {
                                 console.error(e)
                             }
                         }
-                        if (m.limit) m.reply(+ m.limit + ' Limit terpakai')
+                        if (m.limit) m.reply(+ m.limit + ' Limit used')
                     }
                     break
                 }
@@ -729,8 +729,8 @@ module.exports = {
         let chat = global.db.data.chats[msg.key.remoteJid] || {}
         if (chat.delete) return
         await this.reply(msg.key.remoteJid, `
-Terdeteksi @${participant.split`@`[0]} telah menghapus pesan
-Untuk mematikan fitur ini, ketik
+        Detected @${participant.split`@`[0]} deleted message
+To turn off this feature, type
 *.enable delete*
 `.trim(), msg, {
             mentions: [participant]
@@ -741,7 +741,7 @@ Untuk mematikan fitur ini, ketik
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: 'Perintah ini hanya dapat digunakan oleh _*OWWNER!1!1!*_',
+        rowner: 'This command can only be used by _*OWWNER!1!1!*_',
         owner: 'Perintah ini hanya dapat digunakan oleh _*Owner Bot*_!',
         mods: 'Perintah ini hanya dapat digunakan oleh _*Moderator*_ !',
         premium: 'Perintah ini hanya untuk member _*Premium*_ !',
