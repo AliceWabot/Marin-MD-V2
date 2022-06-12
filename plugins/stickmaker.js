@@ -26,7 +26,7 @@ try {
       quoted: m
     })
   } catch (e) {
-    m.reply('gagal, coba gambar lain')
+    m.reply('📛 failed, try another image 📛')
     await conn.sendFile(m.chat, apiUrl, 'image.png', null, m)
   }
 }

@@ -77,7 +77,7 @@ let handler = async(m,{text, conn}) => {
 
 let p = await  hxz.ttdownloader(text)
 const { nowm, wm, audio } = p
-conn.sendFile(m.chat, wm, null, 'dengan watermark', m)
+conn.sendFile(m.chat, wm, null, '© Alice 🤍🥀', m)
 }
 handler.command = ['tiktokwm']
 module.exports = handler

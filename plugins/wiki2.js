@@ -32,12 +32,12 @@ async function wikipedia(querry) {
   }
 }
 let handler = async (m, { conn, text }) => {
-  if (!text) throw `uhm.. cari apa?\n\ncontoh:\n.wiki nodejs`
+  if (!text) throw `uhm.. what are you looking for?\n\nexample:\n.wiki nodejs`
   wikipedia(`${text}`).then(res => {
     m.reply(res.result.isi)
-  }).catch(() => { m.reply('Tidak Ditemukan') })
+  }).catch(() => { m.reply('Not found') })
 }
-handler.help = ['wiki2 <pencarian>', 'wikipedia2 pencarian']
+handler.help = ['wiki2 <search>', 'wikipedia2 search']
 handler.tags = ['internet']
 handler.command = /^(wiki2)$/i
 

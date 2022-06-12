@@ -52,13 +52,13 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     if (stiker) await conn.sendFile(m.chat, stiker, '', '', m, 0, { asSticker: true })
 
-    else throw `Balas stiker dengan perintah *${usedPrefix + command} <teks>|<teks>*`
+    else throw `Reply sticker with command *${usedPrefix + command} <text>|<text>*`
 
   }
 
 }
 
-handler.help = ['wm <teks>|<teks>']
+handler.help = ['wm <text>|<text>']
 
 handler.tags = ['sticker']
 

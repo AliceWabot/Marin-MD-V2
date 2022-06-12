@@ -1,18 +1,18 @@
 const axios = require('axios')
 let split = '|'
 let handler = async (m, { conn, args: [effect], text: txt, usedPrefix, command }) => {
-  if (!effect) throw 'Ketik .textpro <nama efek>\n*Contoh:*\n.textpro space elyaas\n\n╭─❑ 「 LIST EFFECT 」 ❑──\n' + effects.map(v => v.title).join('\n│ • ')
+  if (!effect) throw '💮 Type .textpro <effect name>\n*💮 Example:*\n.textpro space elyaas\n\n╭─❑ 「 LIST EFFECT 」 ❑──\n' + effects.map(v => v.title).join('\n│ • ')
   effect = effect.toLowerCase()
-  if (!effects.find(v => (new RegExp(v.title, 'gi')).test(effect))) throw `Efek *${effect}* tidak ditemukan`
+  if (!effects.find(v => (new RegExp(v.title, 'gi')).test(effect))) throw `📛 Effect *${effect}* not found 📛`
   let text = txt.replace(new RegExp(effect, 'gi'), '').trimStart()
   if (text.includes(split)) text = text.split(split)
   text = Array.isArray(text) ? text : [text]
   let res = await textpro(effect, ...text)
-  if (typeof res == 'number') throw res == -1 ? `Efek *${effect}* tidak ditemukan` : `Gunakan format ${usedPrefix}${command} ${effect} ${new Array(res).fill('text').map((v, i) => v + (i ? i + 1 : '')).join('|')}`
+  if (typeof res == 'number') throw res == -1 ? `📛 Effect *${effect}* not found 📛` : `Use format ${usedPrefix}${command} ${effect} ${new Array(res).fill('text').map((v, i) => v + (i ? i + 1 : '')).join('|')}`
   let result = await axios.get(res, {
     responseType: 'arraybuffer'
   })
-  await m.reply('*Sedang Membuat...*')
+  await m.reply('Making...')
   await conn.sendFile(m.chat, result.data, 'textpro.jpg', `*TEXTPRO*\n*Effect:* ${effect}`, m)
 }
 handler.help = ['textpro'].map(v => v + ' <effect> <text>')

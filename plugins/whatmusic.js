@@ -4,8 +4,8 @@ let axios = require('axios')
 let handler = async (m, { conn, usedPrefix, command }) => {
   let q = m.quoted ? m.quoted : m
   let mime = (m.quoted ? m.quoted : m.msg).mimetype || ''
-  if (!/video|audio/.test(mime)) throw `Balas music yang ingin dicari dengan caption *${usedPrefix + command}*`
- m.reply('Wait Ngap, Lagi Cari....')
+  if (!/video|audio/.test(mime)) throw `Reply to the music you want to find with a caption*${usedPrefix + command}*`
+ m.reply('Wait...')
 				const bodyForm = new FormData()
 			        bodyForm.append('audio', await q.download(), 'music.mp3')
            			bodyForm.append('apikey', 'caliph_71')
@@ -18,13 +18,13 @@ let handler = async (m, { conn, usedPrefix, command }) => {
                 		data: bodyForm
             			})
                 		.then(({data}) =>{
-				  m.reply(`*Lagu Ditemukan!*\n\n*Judul* : ${data.data.title}\n*Artist* : ${data.data.artists}\n*Genre* : ${data.data.genre}\n*Album* : ${data.data.album}\n*Release* : ${data.data.release_date}`)
+				  m.reply(`*Song Found!*\n\n*title* : ${data.data.title}\n*Artist* : ${data.data.artists}\n*Genre* : ${data.data.genre}\n*Album* : ${data.data.album}\n*Release* : ${data.data.release_date}`)
 				}).catch(() => {
-				m.reply('Lagu Tidak Ditemukan!\nLu Nyari DJ Remix ya?')
+				m.reply('Song Not Found!\nAre you looking for a DJ Remix?')
 				})
 				
 }
-handler.help = ['whatmusic', 'judullagu']
+handler.help = ['whatmusic']
 handler.tags = ['tools']
 
 handler.command = /^(whatmusic|judullagu)$/i

@@ -4,34 +4,34 @@ let limit = 1026
 let fetch = require('node-fetch')
 const { servers, yta } = require('../lib/y2mate')
 let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) => {
-  if (!args || !args[0]) throw `contoh:\n${usedPrefix + command} https://www.youtube.com/watch?v=yxDdj_G9uRY`
+  if (!args || !args[0]) throw `Example:\n${usedPrefix + command} https://www.youtube.com/watch?v=xylh_sJAYdc`
   let chat = global.db.data.chats[m.chat]
   let server = (args[1] || servers[0]).toLowerCase()
   let { dl_link, thumb, title, filesize, filesizeF } = await yta(args[0], servers.includes(server) ? server : servers[0])
   let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
-  m.reply(isLimit ? `Ukuran File: ${filesizeF}\nUkuran file diatas ${limit} MB, download sendiri: ${dl_link}` : global.wait)
+  m.reply(isLimit ? `File Size: ${filesizeF}\n🔸 File size above ${limit} MB, download via: ${dl_link}` : global.wait)
   if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp3', `
 ┏┉━━━━━━━━━━━❏
 ┆ *YOUTUBE MP3*
 ├┈┈┈┈┈┈┈┈┈┈┈
-┆• *Judul:* ${title}
+┆• *Title:* ${title}
 │• *Type:* MP3
-┆• *📥 Ukuran File:* ${filesizeF}
+┆• *📥 File Size* ${filesizeF}
 └❏
 `.trim(), m, null, {
     asDocument: chat.useDocument, mimetype: 'audio/mp4', ptt: true, contextInfo: {
         externalAdReply: {
             title: '▶︎ ━━━━━━━•────────────────── ', 
-            body: 'Hi Banh',
-            description: 'Now Playing',
+            body: 'Hello',
+            description: 'Now Playing 🔊',
             mediaType: 2,
-          thumbnail: await (await fetch('https://telegra.ph/file/69593e197df4812849ce6.jpg')).buffer(),
+          thumbnail: await (await fetch('https://telegra.ph/file/8bbbb1e410f37d37c8d62.jpg')).buffer(),
          mediaUrl: `https://youtu.be/Rz8d06NfZI4`
         }
      }
   })
 }
-handler.help = ['mp3', 'a'].map(v => 'yt' + v + ` <url> [server: ${servers.join(', ')}]`)
+handler.help = 'mp3/tya'].map(v => 'yt' + v + ` <url>`)
 handler.tags = ['downloader']
 handler.command = /^yt(a|mp3)$/i
 handler.owner = false

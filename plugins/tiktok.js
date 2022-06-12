@@ -3,7 +3,7 @@ const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessa
 let fs = require('fs')
 let fetch = require('node-fetch')
 let handler = async (m, {text}) => {
-if (!text) return conn.reply(m.chat, 'Harap masukkan link\n\nContoh: .tiktok https://tiktok.com/xxxxxx', m)
+if (!text) return conn.reply(m.chat, 'Please enter the link', m)
 
     let who
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
@@ -23,20 +23,20 @@ SILAHKAN PILIH`
            hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
-               displayText: '📍instagram',
+               displayText: 'Website',
                url: instagram
                }
                
              },
              {
              quickReplyButton: {
-               displayText: 'Tanpa Watermark',
+               displayText: '🔹 Without Watermark 🔹',
                id: `.tiktoknowm ${text}`,
              }
            },
            {
              quickReplyButton: {
-               displayText: 'dengan watermark',
+               displayText: '🔸 With Watermark 🔸',
                id: `.tiktokwm ${text}`,
              }
            }]

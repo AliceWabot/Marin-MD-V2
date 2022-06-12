@@ -8,7 +8,7 @@ let handler = async (m, { text }) => {
 ${json.result}`)
   else throw 'not found'
 }
-handler.help = ['wiki <pencarian>', 'wikipedia <pencarian']
+handler.help = ['wiki <search>']
 handler.tags = ['internet']
 handler.command = /^wiki|wikipedia$/i
 

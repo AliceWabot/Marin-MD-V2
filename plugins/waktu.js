@@ -1,17 +1,17 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
 
-    if (!text) return conn.reply(m.chat, 'Masukan Nama Daerahnya', m)
+    if (!text) return conn.reply(m.chat, 'Enter the name of the region', m)
 
 	axios.get(`https://tobz-api.herokuapp.com/api/jamdunia?lokasi=${text}&apikey=BotWeA`).then ((res) => {
-	 	let hasil = `Waktu Daerah *${text}*\n\nJam : ${res.data.time}\nTanggal : ${res.data.date}\nInfo : ${res.data.title}`
+	 	let hasil = `Regional Time *${text}*\n\nTime : ${res.data.time}\nDate : ${res.data.date}\nInfo : ${res.data.title}`
 
     conn.reply(m.chat, hasil, m)
 	})
 }
-handler.help = ['waktu'].map(v => v + ' <daerah>')
+handler.help = ['time'].map(v => v + ' <area>')
 handler.tags = ['tools']
-handler.command = /^(waktu)$/i
+handler.command = /^(time)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

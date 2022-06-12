@@ -12,8 +12,8 @@ let handler = async(m, { conn, text }) => {
     let thumb = await (await fetch(json.avatarLarger)).buffer()
     let hasil = `*── 「 TIK-TOK STALK 」 ──*
 
-▢ *Nama*: ${json.username}
-▢ *Follower*: ${json.followerCount}
+▢ *Name*: ${json.username}
+▢ *Followers*: ${json.followerCount}
 ▢ *Following*: ${json.followingCount}
 ▢ *Private*: ${json.isprivate}
 ▢ *Id*: ${json.id}
