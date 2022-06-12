@@ -22,8 +22,8 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
     asDocument: chat.useDocument, mimetype: 'audio/mp4', ptt: true, contextInfo: {
         externalAdReply: {
             title: '▶︎ ━━━━━━━•────────────────── ', 
-            body: 'Hello',
-            description: 'Now Playing 🔊',
+            body: 'Alice Music Player',
+            description: 'Now Playing',
             mediaType: 2,
           thumbnail: await (await fetch('https://telegra.ph/file/8bbbb1e410f37d37c8d62.jpg')).buffer(),
          mediaUrl: `https://youtu.be/Rz8d06NfZI4`
