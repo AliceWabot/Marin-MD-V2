@@ -31,7 +31,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
      }
   })
 }
-handler.help = 'mp3/tya'].map(v => 'yt' + v + ` <url>`)
+handler.help = ['mp3/tya'].map(v => 'yt' + v + ` <url>`)
 handler.tags = ['downloader']
 handler.command = /^yt(a|mp3)$/i
 handler.owner = false
